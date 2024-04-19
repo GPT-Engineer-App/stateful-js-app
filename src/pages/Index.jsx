@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, Button, Text, VStack, Heading } from "@chakra-ui/react";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import useCounter from "../services/counterService";
 
 const Index = () => {
-  const [count, setCount] = useState(0);
-
-  const increment = () => setCount(count + 1);
-  const decrement = () => setCount(count - 1);
+  const { count, increment, decrement } = useCounter();
 
   return (
     <VStack spacing={4} align="center" justify="center" height="100vh">
